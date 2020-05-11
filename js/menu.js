@@ -24,7 +24,7 @@ function openMenu() {
 
 	// create a new close button
 	const closeButton = document.createElement("img");
-	closeButton.src = "../assets/close-button.png";
+	closeButton.src = "./assets/close-button.png";
 	closeButton.className = "mobile-close-button";
 
 	// add a method to be run on click
