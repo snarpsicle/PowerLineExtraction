@@ -11,6 +11,7 @@ img {
 	height: auto;
 }
 
+
 a > img {
 	max-width: 40px;
 	object-fit: contain;
@@ -47,7 +48,7 @@ body {
 	grid-column-end: 4;
 	background-color: black;
 	border: 1px solid #585858;
-/*	border-radius: 4px;*/
+	/*	border-radius: 4px;*/
 	/* Flex */
 	display: flex;
 	align-items: center;
@@ -71,6 +72,7 @@ body {
 
 .spacer {
 	flex: 1;
+	padding: 0px px;
 }
 
 .navbar-mobile {
@@ -111,6 +113,9 @@ body {
 
 .sidepane-content {
 	display: block;
+	padding-top: 1px;
+
+
 }
 
 .sidepane-hidden {
@@ -134,6 +139,7 @@ body {
 	transition: 1s;
 	opacity: 1;
 	align-self: flex-end;
+	z-index: 5;
 }
 
 /*added*/
@@ -170,7 +176,7 @@ body {
 	grid-column-end: 4;
 	grid-row-start: 2;
 	grid-row-end: 10;
-/*	border: 1px solid #585858;*/
+	/*	border: 1px solid #585858;*/
 	border-radius: 4px;
 }
 
@@ -181,7 +187,7 @@ body {
 	grid-row-end: 10;
 	grid-column: 3 / 4;
 	background-color: #efefef;
-/*	border: 1px solid #585858;*/
+	/*	border: 1px solid #585858;*/
 	border-radius: 4px;
 	display: flex;
 	flex-direction: column;
@@ -231,12 +237,12 @@ body {
 
 #logo-name {
 	font-family: 'Anton', sans-serif;
-	font-size: 1vw; 
+	font-size: 1vw;
 }
 
 #logo-name b:first-child {
 	font-family: 'Anton', sans-serif;
-	font-size: 2vw; 
+	font-size: 2vw;
 }
 
 #basemapGalleryDiv {
@@ -247,12 +253,13 @@ body {
 	text-align: justify;
 	align-items: center;
 	padding: 10px;
+
 }
 
 .sidepane > div > img {
 	box-shadow: 2px 6px 8px white;
 	border-radius: 2px;
-	max-height: 150px
+	max-height: 150px align-items: center;
 }
 
 #side-pane-title {
@@ -272,13 +279,13 @@ body {
 }
 
 .navbar a:first-child {
-	cursor:default;
+	cursor: default;
 }
 
 #laylist {
-		height: max;
-		width: max;
-	}
+	height: max;
+	width: max;
+}
 
 
 @media screen and (max-width: 1000px) {
@@ -292,15 +299,16 @@ body {
 
 
 	}
-	
+
 	#logo-name b:first-child {
-	font-family: 'Anton', sans-serif;
-	font-size: 3vw; 
-}
+		font-family: 'Anton', sans-serif;
+		font-size: 3vw;
+	}
+
 	#logo-name {
-	font-family: 'Anton', sans-serif;
-	font-size: 2vw; 
-}
+		font-family: 'Anton', sans-serif;
+		font-size: 2.5vw;
+	}
 
 	.navbar a:last-child > img {
 		display: flex;
@@ -320,6 +328,14 @@ body {
 		display: none;
 	}
 
+	.sidepane-content {
+		padding: 1px
+	}
+
+	.close-button {
+		height: 0;
+	}
+
 	.map {
 		grid-column-start: 1;
 		grid-column-end: 4;
@@ -333,3 +349,4 @@ body {
 		width: 200px;
 	}
 }
+
