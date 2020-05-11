@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>LIDAR</title>
+
+	<link rel="stylesheet" href="./style.css">
+
+	<!--	ESRI CSS-->
+	<link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
+	<script src="https://js.arcgis.com/4.14/"></script>
+
+</head>
+
+<body>
+
+	<div class="app-container">
+		<div class="navbar">
+			<a><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Lidar_P1270894.jpg" /></a>
+			<div id="logo-name"><span><b>Power Line Extraction</b> &nbsp; &nbsp; scene created from lidar</span></div>
+			<div id="spacer"></div>
+			<a id="maptext" href="./primaryRefine.html">Primary Refine</a>
+			<a id="maptext" href="./SecondaryRefine.html">Secondary Refine</a>
+			<a id="maptext" href="./refinedBuffer.html">Refined Buffer</a>
+			<a href="#" onclick="openMenu();"><img src="./assets/hamburger-button.png" alt="navigation-menu"></a>
+		</div>
+		<div class="map">
+			<!-- map to be filled with js -->
+			<div id="viewDiv"></div>
+		</div>
+		<div class="sidepane">
+			<a class="close-button" onclick="closeSidepane();"><img src="./assets/close-button.png" alt="close button"></a>
+
+			<!--			<div id="map-legend"></div>-->
+			<div>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Powerline_rainforest.jpg" />
+			</div>
+			<div class="sidepane-content">
+				<h1>LIDAR</h1>
+				<p>This scene was created from lidar data. It was made to showcase power line points that have been extracted from an LAS file. The buildings, their rooftops, and the trees are to scale relative to the LAS point cloud. Esri offers an add-in package called local governments 3D basemaps. Here is a link to the download <a href="https://solutions.arcgis.com/local-government/help/local-government-scenes/get-started/install-addin/">add-in package</a>. The buildings were created by imputing a buildings footprint, a DTM, a DSM, a feature height, and a LAS dataset. The trees were created by imputing the LAS dataset along with class codes from that dataset that were vegetation, building footprints, and a DTM. Buildings can be created quickly with rule based styles to make each unique and trees can be made to look more realistic but sadly these styles do not transfer to AGOL, which is what you see here displayed. To download this project and explore the methods in ArcPro click <a href="./assets/PowerLines.zip">here</a>. Inside this project you will find a working model for extracting power lines. All you need is an LAS file and a power lines vector and it will do the rest. Links in the upper right hand corner of this website will guide you visually through the steps to extract these power line points. This web app is responsive and moblie friendly, try resizing the browser and watch the app change to mobile mode. Feel free to explore the power lines. Zoom (wheel), pan (left mouse click), and rotate (right mouse click) this 3D world.
+				</p>
+			</div>
+		</div>
+		<a class="info-button" onclick="openSidepane();"> <img src="./assets/info-button.png" alt="more info button"> </a>
+	</div>
+
+	<script src="./map.js"></script>
+	<script src="./js/drawer.js"></script>
+	<script src="./js/menu.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>LIDAR</title>
+
+	<link rel="stylesheet" href="./style.css">
+
+	<!--	ESRI CSS-->
+	<link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
+	<script src="https://js.arcgis.com/4.14/"></script>
+
+</head>
+
+<body>
+
+	<div class="app-container">
+		<div class="navbar">
+
+			<a href="#"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Lidar_P1270894.jpg" /></a>
+
+			<div id="logo-name">Raster based analysis</div>
+			<div id="spacer"></div>
+			<a id="maptext" href="./index.html">3D Map</a>
+			<a id="maptext" href="./SecondaryRefine.html">Secondary Refine</a>
+			<a id="maptext" href="./refinedBuffer.html">Refined Buffer</a>
+			<a href="#" onclick="openMenu();"><img src="./assets/hamburger-button.png" alt="navigation-menu"></a>
+		</div>
+		<div class="map">
+			<!-- map to be filled with js -->
+			<div id="map"></div>
+			<div id="laylist"></div>
+		</div>
+		<div class="sidepane">
+			<a class="close-button" onclick="closeSidepane();"><img src="./assets/close-button.png" alt="close button"></a>
+
+<!--			<div id="map-legend"></div>-->
+			<div>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Powerline_rainforest.jpg" />
+			</div>
+			<div class="sidepane-content">
+				<h1>Primary Refine</h1>
+				<p>After investigating the LAS file it was apparent that the power lines fell into a predefined class of high vegetation and first of many hits. This class in itself could be divided into 3 sub classes; trees, building edges, and power lines. My analysis started with creating a DTM, DSM, intensity, and feature height. The DTM used the average elevation of cells in a sampling value of 6 inches of the LAS dataset ground. The DSM used the maximum elevation of cells in a sampling value of 6 inches of the dataset high vegetation. The intensity used the average intensity of cells in a sampling value of 6 inches of the dataset high vegetation. To create the feature height only using high vegetation and not creating unwanted pyramids evolved the tools; raster calculator, reclassify,  and con. The focal statistics tool then ran the feature height with the statistic type set to standard deviation. The focal statistic and the intensity were both reclassified to extract as best it could only power lines. This map shows both layers reclassified and a third layer called 1st power line pixel refine, which is where the focal statistic and the intensity overlap. Click the eye in the layer list to toggle on/off layers to better understand the primary refine. For the next steps in my analysis check out secondary refine.
+</p>
+			</div>
+		</div>
+		<a class="info-button" onclick="openSidepane();"> <img src="./assets/info-button.png" alt="more info button"> </a>
+	</div>
+
+	<script src="./primaryRefine.js"></script>
+	<script src="./js/drawer.js"></script>
+	<script src="./js/menu.js"></script>
+
+</body></html>

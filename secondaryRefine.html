@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>LIDAR</title>
+
+	<link rel="stylesheet" href="./style.css">
+
+	<!--	ESRI CSS-->
+	<link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
+	<script src="https://js.arcgis.com/4.14/"></script>
+
+</head>
+
+<body>
+
+	<div class="app-container">
+		<div class="navbar">
+
+			<a href="#"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Lidar_P1270894.jpg" /></a>
+
+			<div id="logo-name">Raster based analysis</div>
+			<div id="spacer"></div>
+			<a id="maptext" href="./index.html">3D Map</a>
+			<a id="maptext" href="./primaryRefine.html">Primary Refine</a>
+			<a id="maptext" href="./refinedBuffer.html">Refined Buffer</a>
+			<a href="#" onclick="openMenu();"><img src="./assets/hamburger-button.png" alt="navigation-menu"></a>
+		</div>
+		<div class="map">
+			<!-- map to be filled with js -->
+			<div id="map"></div>
+			<div id="laylist"></div>
+		</div>
+		<div class="sidepane">
+			<a class="close-button" onclick="closeSidepane();"><img src="./assets/close-button.png" alt="close button"></a>
+
+<!--			<div id="map-legend"></div>-->
+			<div>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Powerline_rainforest.jpg" />
+			</div>
+			<div class="sidepane-content">
+				<h1>Secondary Refine</h1>
+				<p>I used the feature height itself reclassified for my secondary refine. Where the reclassified feature height and the 1st power line pixel refine overlap creates my final power line pixel refine layer. Click the eye in the layer list to toggle on/off layers to better understand the secondary refine. This concludes my raster analysis. For my final refine based on a vector layer check out refined buffer.</p>
+			</div>
+		</div>
+		<a class="info-button" onclick="openSidepane();"> <img src="./assets/info-button.png" alt="more info button"> </a>
+	</div>
+
+	<script src="./secondaryRefine.js"></script>
+	<script src="./js/drawer.js"></script>
+	<script src="./js/menu.js"></script>
+
+</body></html>

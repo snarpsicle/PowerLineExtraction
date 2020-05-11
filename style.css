@@ -1,0 +1,335 @@
+/* Boilerplate */
+html {
+	/* include border and padding in width and height */
+	box-sizing: border-box;
+	font-family: 'Roboto', helvetica, sans-serif;
+}
+
+img {
+	/* images responsive*/
+	max-width: 100%;
+	height: auto;
+}
+
+a > img {
+	max-width: 40px;
+	object-fit: contain;
+
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	/* set the margin to 0, 100 vert height, no scrollbar */
+	margin: 0 auto;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Create the basic layout */
+.app-container {
+	display: grid;
+	/* 3 cols*/
+	grid-template-columns: 1fr 1fr 350px;
+	/* 3 rows*/
+	grid-template-rows: 55px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 5px;
+	height: 100vh;
+	margin: 5px;
+}
+
+.navbar {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	background-color: black;
+	border: 1px solid #585858;
+/*	border-radius: 4px;*/
+	/* Flex */
+	display: flex;
+	align-items: center;
+	z-index: 2001;
+	transition: .5s;
+}
+
+.navbar a,
+.navbar div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: white;
+	text-align: center;
+	padding: 0 15px;
+	text-decoration: none;
+	font-size: 17px;
+	height: 100%;
+
+}
+
+.spacer {
+	flex: 1;
+}
+
+.navbar-mobile {
+	grid-column: 1 / span 3;
+	/*    grid-row: 1 / span 2;*/
+	height: 140px;
+	border: 1px solid black;
+	background-color: gray;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	font-family: 'Anton', sans-serif;
+	z-index: 3000;
+	transition: .5s;
+
+}
+
+.mobile-link {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	padding: 0 16px;
+	text-decoration: none;
+	font-size: 17px;
+	cursor: pointer;
+	height: 100%;
+}
+
+
+.mobile-close-button {
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+
+
+.sidepane-content {
+	display: block;
+}
+
+.sidepane-hidden {
+	grid-column: 1;
+	grid-row: 2 / 4;
+	/*added*/
+	width: 0;
+	/*added*/
+	border: 1px solid #ccc;
+	z-index: 10;
+	transition: .5s;
+}
+
+.sidepane-content-hidden {
+	display: none;
+}
+
+
+.close-button {
+	cursor: pointer;
+	transition: 1s;
+	opacity: 1;
+	align-self: flex-end;
+}
+
+/*added*/
+.close-button > img,
+.info-button > img {
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+
+}
+
+.info-button {
+	z-index: 5;
+}
+
+/*added*/
+.close-button-hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+
+/*added*/
+.info-button {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+
+
+.map {
+	display: flex;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 10;
+/*	border: 1px solid #585858;*/
+	border-radius: 4px;
+}
+
+
+
+.sidepane {
+	grid-row-start: 2;
+	grid-row-end: 10;
+	grid-column: 3 / 4;
+	background-color: #efefef;
+/*	border: 1px solid #585858;*/
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	line-height: 125%;
+	overflow: auto;
+	z-index: 10;
+}
+
+
+/* end of basic layout */
+
+#viewDiv {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#map {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.navbar > div {
+	padding: 10px;
+}
+
+.navbar div:last-child {
+	display: none;
+}
+
+#maptext {
+	text-decoration: none;
+	color: white;
+}
+
+#spacer {
+	flex: 1;
+}
+
+#logo {
+	height: 35px;
+	margin-left: 10px;
+}
+
+#logo-name {
+	font-family: 'Anton', sans-serif;
+	font-size: 1vw; 
+}
+
+#logo-name b:first-child {
+	font-family: 'Anton', sans-serif;
+	font-size: 2vw; 
+}
+
+#basemapGalleryDiv {
+	background-color: aqua;
+}
+
+.sidepane > div {
+	text-align: justify;
+	align-items: center;
+	padding: 10px;
+}
+
+.sidepane > div > img {
+	box-shadow: 2px 6px 8px white;
+	border-radius: 2px;
+	max-height: 150px
+}
+
+#side-pane-title {
+	font-size: 1.3em;
+	text-align: center;
+	font-weight: 700;
+}
+
+#map-legend {
+	min-height: 45px;
+	text-align: center;
+	font-family: 'Anton', sans-serif;
+}
+
+.navbar a:last-child {
+	display: none;
+}
+
+.navbar a:first-child {
+	cursor:default;
+}
+
+#laylist {
+		height: max;
+		width: max;
+	}
+
+
+@media screen and (max-width: 1000px) {
+
+	.navbar a:not(:first-child) {
+		display: none;
+	}
+
+	.navbar a:last-child {
+		display: flex;
+
+
+	}
+	
+	#logo-name b:first-child {
+	font-family: 'Anton', sans-serif;
+	font-size: 3vw; 
+}
+	#logo-name {
+	font-family: 'Anton', sans-serif;
+	font-size: 2vw; 
+}
+
+	.navbar a:last-child > img {
+		display: flex;
+		height: 30px;
+		width: 30px;
+	}
+
+
+	.sidepane {
+		grid-row-start: 8;
+		grid-row-end: 10;
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+
+	.sidepane div:nth-child(2) {
+		display: none;
+	}
+
+	.map {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		grid-row-start: 2;
+		grid-row-end: 10;
+
+	}
+
+	#laylist {
+		height: max;
+		width: 200px;
+	}
+}
