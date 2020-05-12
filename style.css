@@ -38,9 +38,9 @@ body {
 	grid-template-columns: 1fr 1fr 350px;
 	/* 3 rows*/
 	grid-template-rows: 55px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-gap: 5px;
+	grid-gap: 0px;
 	height: 100vh;
-	margin: 5px;
+	margin: 0px;
 }
 
 .navbar {
@@ -188,7 +188,7 @@ body {
 	grid-column: 3 / 4;
 	background-color: #efefef;
 	/*	border: 1px solid #585858;*/
-	border-radius: 4px;
+	border-radius: 0px;
 	display: flex;
 	flex-direction: column;
 	line-height: 125%;
